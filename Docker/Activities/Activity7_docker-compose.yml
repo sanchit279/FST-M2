@@ -1,0 +1,11 @@
+services:
+    #Redis daatabase
+    redis-server:
+        image: 'redis'
+        command: ["redis-server", "--protected-mode", "no"]
+    #Noda application
+    node-app:
+        build: ./
+        image: docker.io/jkaja639/visits
+        ports:
+            - "8081:8081"
